@@ -34,8 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(function() {
       messageDiv.textContent = 'Configuration saved. Sending config to server...';
 
+      const endpoint = `${window.location.origin}/api/query`;
+
       // Send the configuration to the server
-      return fetch('https://cs663-trellotest-ajepa3hgdhdkd9a5.canadacentral-01.azurewebsites.net/api/query', {
+      return fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
